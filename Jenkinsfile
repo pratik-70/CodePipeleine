@@ -1,24 +1,34 @@
 pipeline {
-
     agent any
 
     stages {
 
         stage('Build') {
             steps {
-                bat 'mvn clean'
+                script {
+                    if (isUnix()) {
+                        sh 'mvn clean'
+                    } else {
+                        bat 'mvn clean'
+                    }
+                }
             }
         }
 
         stage('Test') {
             steps {
-                bat 'mvn test'
+                script {
+                    if (isUnix()) {
+                        sh 'mvn test'
+                    } else {
+                        bat 'mvn test'
+                    }
+                }
             }
         }
     }
 
     post {
-
         success {
             echo 'Tests Passed'
         }
