@@ -14,7 +14,7 @@ public class LoginTest {
 
         driver.get("https://www.google.com");
 
-        Assert.assertEquals(driver.getTitle(), "Google123");
+        Assert.assertEquals(driver.getTitle(), "Google");
 
         driver.quit();
     }
