@@ -8,6 +8,12 @@ pipeline {
 
     stages {
 
+        stage('Check Java') {
+            steps {
+                sh 'java -version'
+            }
+        }
+
         stage('Build') {
             steps {
                 sh 'mvn clean'
@@ -19,6 +25,8 @@ pipeline {
                 sh 'mvn test'
             }
         }
+
+
     }
 
     post {
