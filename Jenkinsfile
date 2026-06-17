@@ -24,7 +24,7 @@ pipeline {
         }
 
         failure {
-            mail to: 'your_email@gmail.com',
+            mail to: '70812345pratik@gmail.com',
                  subject: 'Selenium Test Failed',
                  body: 'Please check Jenkins Build.'
         }
